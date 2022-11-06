@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /*#2c303e;*/
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 0 3px;
+    transition: background 0.5s linear;
+}
+
+/******
+Dark Mode
+**********/
+
+.container.on{
+    background: #2c303e;
+}
+
+.container.on .signin-box,
+.container.on .signup-box{
+    transition: background 0.5s linear;
+    background: #2c303e;
+}
+.container.on .signin-box .content h1,
+.container.on .signup-box .createAccount h1{
+    transition: color 0.5s linear;
+    color: #fff;
+}
+.container.on .signup-box .createAccount .social-icons img{
+    transition: border 0.5s linear;
+    border: 1px solid #f2f2f29c;
+}
+.container.on .signin-box .content p,
+.container.on .signup-box .createAccount span{
+    transition: 0.5s ease-in-out;
+    color: #f2f2f29c;
+}
+.container.on .signup-box .createAccount .user-input input{
+    color: #fff;
+}
+/******************
+DarkMode Switch
+*******************/
+
+.container .mode{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 100px;
+    background: #555;/**/
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s linear;
+    cursor: pointer;
+}
+.container .mode span{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+}
+.container .mode.dark{
+    background: rgba(2, 250, 56, 0.7);
+}
+
+.container .mode.dark span{
+    transform: translateY(55px);
+}
+/*--------------------------*/
+
+
+.container .signin-box{
+    position: relative;
+    border: 0px solid;
+    width: 35%; /*370px :- 1024px*/
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: /*#2c303e*/#fff;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+.container .signin-box .pattren{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+.container .signin-box .top{
+    top: -10rem;
+    right: -6rem;
+    box-shadow: -3px 3px 5px rgba(0,0,0,0.3);
+}
+.container .signin-box .bottom{
+    bottom: -10rem;
+    left: -6rem;
+    box-shadow: 3px -3px 5px rgba(0,0,0,0.3);
+}
+.container .signin-box .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid;
+    gap: 2rem 0;
+    padding: 0 1rem;
+}
+.container .signin-box .content h1,
+.container .signup-box .createAccount h1{
+    font-size: 2.5rem;
+    color: /*#fff*/#555;
+    letter-spacing: 1px;
+}
+.container .signin-box .content p{
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    color: /*#f2f2f29c*/#555;
+    font-weight: 500;
+}
+.container .signin-box .content button,
+.container .signup-box .createAccount button {
+    padding: 0.6rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: rgba(48, 2, 252, 0.63);
+    color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.container .signup-box{
+    border: 0px solid;
+    width: calc(100% - 50%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: /*#2c303e*/#fff;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.container .signup-box .createAccount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem 0;
+    border: 0px solid;
+}
+.container .signup-box .createAccount .social-icons img{
+    width: 40px;
+    border: 1px solid /*#f2f2f29c*/#555;
+    padding: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.container .signup-box .createAccount span{
+    color: grey;
+}
+.container .signup-box .createAccount .user-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem 0;
+    width: 100%;
+}
+.container .signup-box .createAccount .user-input input{
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: #555;
+    outline: 2px solid rgba(0,0,0,0.2);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+
+
+/**************
+Media Queries
+**************/
+
+@media screen and (max-width: 1024px){
+    
+    .container .signin-box{
+        width: 370px;
+    }
+}
+
+@media screen and (min-width: 701px) and (min-width: 768px) and (max-width: 720px){
+
+    .container{
+        flex-direction: column;
+        gap: 15px 0;
+    }
+    .container .signin-box{
+        width: 80%;
+    }
+    .container .signup-box{
+        width: 90%;
+        background: red;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .container{
+        height: 150vh;
+        flex-direction: column;
+        gap: 10px 0;
+    }
+    .container .mode{
+        top: -1rem;
+        left: 50%;
+        transform: translateY(-50%);
+        background: #555;
+        transform: rotate(-90deg);
+    }
+    .container .signin-box{
+        margin-top: 3rem;
+        width: 100%;
+    }
+    .container .signin-box .content{
+        padding:  2.5rem;
+    }
+    .container .signup-box{
+        width: 100%;
+    }
+    .container .signup-box .createAccount{
+        padding: 1rem 2.5rem;
+    }
+}
+@media screen and (max-width: 450px){
+    .container{
+        padding: 1.5rem 1rem;
+    }
+    .container .signin-box .content{
+        padding: 0 2.5rem;
+    }
+    .container .signin-box .content h1,
+    .container .signup-box .createAccount h1{
+        font-size: 2.1rem;
+        text-align: center;
+    }
+    .container .signup-box .createAccount{
+        padding: 0.5rem 1.5rem;
+    }
+}
+@media screen and (max-width: 350px){
+    .container{
+        padding: 0.75rem 1rem;
+        min-height: 100vh;
+    }
+    .container .mode{
+        top: 0;
+        width: 35px;
+        height: 65px;
+    }
+    .container .mode span{
+        width: 30px;
+        height: 30px;
+    }
+    .container .mode.dark span{
+        transform: translateY(35px);
+    }
+}

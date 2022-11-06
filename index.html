@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" width="device-width, initial-scale=1.0">
+        <title>Login</title>
+
+        <link rel="stylesheet" type="text/css" href="loginStyle.css">
+    </head>
+
+    <body>
+        <section class="container">
+            <div class="mode">
+                <span></span>
+            </div>
+            <div class="signin-box">
+                <div class="pattren top"></div>
+                <div class="pattren bottom"></div>
+                <div class="content">
+                    <h1>Welcome Back !</h1>
+                    <p>To keep connected with us please login with your personal information</p>
+                    <button>sign in</button>
+                </div>
+            </div>
+            <div class="signup-box">
+                <div class="createAccount">
+                    <h1>Create An Account</h1>
+                    <div class="social-icons">
+                        <img src="facebook.png">
+                        <img src="instagram.png">
+                        <img src="twitter.png">
+                    </div>
+                    <span>Or user email for registrations</span>
+                    <div class="user-input">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <button>sign up</button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let modeSwitch = document.querySelector(".mode");
+            let main = document.querySelector(".container");
+
+            modeSwitch.addEventListener('click', function(){
+                modeSwitch.classList.toggle('dark');
+                main.classList.toggle('on');
+            })
+
+        </script>
+    </body>
+</html>
